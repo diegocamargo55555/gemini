@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  # ========================================================
+  # Banco de Dados PostgreSQL
+  # ========================================================
+  db:
+    image: postgres:16-alpine
+    container_name: portfolio_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-portfolio_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-portfolio_secret_pass_123}
+      POSTGRES_DB: ${POSTGRES_DB:-portfolio_db}
+    volumes:
+      - portfolio_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-portfolio_user} -d ${POSTGRES_DB:-portfolio_db}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          cpus: '1.5'
+          memory: 1024M
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+
+  # ========================================================
+  # Aplicação Portfólio (Golang Backend + React SPA Embutido)
+  # ========================================================
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: portfolio_app
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "${PORT:-8080}:8080"
+    environment:
+      - PORT=8080
+      - DATABASE_URL=postgres://${POSTGRES_USER:-portfolio_user}:${POSTGRES_PASSWORD:-portfolio_secret_pass_123}@db:5432/${POSTGRES_DB:-portfolio_db}?sslmode=disable
+      - PROJECTS_FILE=/app/data/projects.yaml
+      - STATIC_DIR=/app/public
+      - ENABLE_HOT_RELOAD=true
+    volumes:
+      # Monta o arquivo YAML para permitir edição em tempo real no host
+      - ./data:/app/data
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 512M
+        reservations:
+          cpus: '0.1'
+          memory: 64M
+
+volumes:
+  portfolio_pgdata:
+    driver: local

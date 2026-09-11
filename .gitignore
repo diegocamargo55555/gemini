@@ -1,0 +1,25 @@
+# Binaries and builds
+bin/
+dist/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Node / Frontend
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Logs and environment
+*.log
+.env
+
+# OS / Editor
+.DS_Store
+.vscode/
+.idea/
+tmp/
+scratch/

@@ -1,0 +1,90 @@
+projects:
+  - id: "investimentos-app"
+    title: "Plataforma de Gestão de Investimentos"
+    slug: "plataforma-de-investimentos"
+    short_description: "Dashboard inteligente para consolidação de carteira, cotações em tempo real e análise de rendimentos de ações e FIIs."
+    description: |
+      Aplicação completa para investidores individuais acompanharem sua carteira consolidada de ativos financeiros (Ações da B3, Fundos Imobiliários, Tesouro Direto e Criptomoedas).
+      
+      ### Funcionalidades Principais:
+      - **Cotações em Tempo Real**: Atualizações contínuas de preços e variação diária.
+      - **Gráficos Interativos**: Evolução patrimonial, distribuição por classe de ativo e projeção de dividendos futuros.
+      - **Cálculo de Preço Médio e IR**: Apuração automática de lucro/prejuízo e estimativa de imposto de renda sobre operações.
+      - **Rebalanceamento de Carteira**: Sugestões automáticas de aportes baseadas na meta percentual do investidor.
+    category: "Fintech & Investimentos"
+    tags:
+      - "Golang"
+      - "React"
+      - "TypeScript"
+      - "PostgreSQL"
+      - "Docker"
+      - "TailwindCSS"
+    cover_image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1200&q=80"
+    demo_url: "https://investimentos.demo.local"
+    github_url: "https://github.com/usuario/investimentos-app"
+    status: "completed"
+    featured: true
+    order: 1
+    metrics:
+      ativos_suportados: "10.000+"
+      latencia: "< 15ms"
+      uptime: "99.98%"
+
+  - id: "manga-reader-app"
+    title: "Leitor de Mangás & Quadrinhos Online"
+    slug: "leitor-de-manga-online"
+    short_description: "Plataforma moderna de leitura de mangás com navegação fluida, modo escuro, leitor contínuo e suporte offline (PWA)."
+    description: |
+      Experiência de leitura ultra-rápida e intuitiva inspirada nos melhores leitores internacionais, focada em carregamento instantâneo de páginas e consumo reduzido de dados móveis.
+      
+      ### Funcionalidades Principais:
+      - **Modos de Leitura Flexíveis**: Rolagem vertical contínua, página única ou visualização em página dupla (estilo mangá original da direita para esquerda).
+      - **Cache & Offline First**: Pré-carregamento dinâmico dos próximos capítulos com Service Workers.
+      - **Histórico & Favoritos**: Sincronização automática do progresso de leitura e alertas de novos capítulos lançados.
+      - **Filtros Avançados**: Busca por gêneros (Shonen, Seinen, Isekai, etc.), autores e status de publicação.
+    category: "Entretenimento & Mangá"
+    tags:
+      - "React"
+      - "Golang"
+      - "Docker"
+      - "TailwindCSS"
+      - "IndexedDB"
+      - "PostgreSQL"
+    cover_image: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1200&q=80"
+    demo_url: "https://manga.demo.local"
+    github_url: "https://github.com/usuario/manga-reader"
+    status: "in-progress"
+    featured: true
+    order: 2
+    metrics:
+      tempo_carregamento: "< 0.3s"
+      capitulos_indexados: "50.000+"
+      score_lighthouse: "98/100"
+
+  - id: "cloud-metrics-daemon"
+    title: "Agente de Telemetria e Monitoramento de Servidores"
+    slug: "agente-de-telemetria-servidores"
+    short_description: "Daemon leve em Golang para coleta de métricas de CPU, RAM, I/O e containers Docker com consumo mínimo de recursos."
+    description: |
+      Agente de monitoramento ultra-leve projetado para servidores com recursos controlados (como instâncias com 4 vCPUs e 8 GB de RAM).
+      
+      ### Funcionalidades Principais:
+      - Coleta em tempo real de estatísticas de CPU, memória, I/O de disco e rede.
+      - Monitoramento nativo de containers Docker via Docker Engine API.
+      - Envio de alertas de consumo e telemetria para canais Discord/Telegram.
+      - Consumo menor que 12 MB de RAM em execução contínua.
+    category: "DevOps & Infraestrutura"
+    tags:
+      - "Golang"
+      - "Docker"
+      - "Linux"
+      - "Prometheus"
+    cover_image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80"
+    demo_url: "https://telemetria.demo.local"
+    github_url: "https://github.com/usuario/cloud-metrics-daemon"
+    status: "completed"
+    featured: false
+    order: 3
+    metrics:
+      consumo_ram: "< 12 MB"
+      overhead_cpu: "< 0.1%"
