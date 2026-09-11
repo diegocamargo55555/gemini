@@ -38,22 +38,21 @@ projects:
       Experiência de leitura ultra-rápida e intuitiva inspirada nos melhores leitores internacionais, focada em carregamento instantâneo de páginas e consumo reduzido de dados móveis.
       
       ### Funcionalidades Principais:
-      - **Modos de Leitura Flexíveis**: Rolagem vertical contínua, página única ou visualização em página dupla (estilo mangá original da direita para esquerda).
-      - **Cache & Offline First**: Pré-carregamento dinâmico dos próximos capítulos com Service Workers.
-      - **Histórico & Favoritos**: Sincronização automática do progresso de leitura e alertas de novos capítulos lançados.
-      - **Filtros Avançados**: Busca por gêneros (Shonen, Seinen, Isekai, etc.), autores e status de publicação.
+      - **Integração MangaDex**: Catálogo completo com busca em tempo real, capas de alta resolução e metadados oficiais.
+      - **Leitura de Capítulos**: Lista de capítulos atualizada com ordenação, filtro por idioma (PT-BR, EN) e links diretos para leitura.
+      - **Categorização de Leitura**: Organização de mangás nas categorias **Reading (Lendo)**, **Plan to Read (Pretendo Ler)**, **Finished (Concluído)** e **Dropped (Dropado)**.
+      - **Sincronização Híbrida**: Biblioteca com persistência em PostgreSQL e suporte a uso local offline.
     category: "Entretenimento & Mangá"
     tags:
       - "React"
       - "Golang"
       - "Docker"
-      - "TailwindCSS"
-      - "IndexedDB"
       - "PostgreSQL"
+      - "MangaDex API"
     cover_image: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1200&q=80"
-    demo_url: "https://manga.demo.local"
-    github_url: "https://github.com/usuario/manga-reader"
-    status: "in-progress"
+    demo_url: "https://manga.diego-portifolio.online"
+    github_url: "https://github.com/usuario/manga-wrapper"
+    status: "completed"
     featured: true
     order: 2
     metrics:
