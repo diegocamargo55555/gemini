@@ -1,0 +1,23 @@
+# Binaries
+bin/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# SQLite Database files
+data/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Node / Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.tmp/
+*.log
+
+# Environment files
+.env

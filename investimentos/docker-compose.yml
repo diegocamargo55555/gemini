@@ -1,0 +1,21 @@
+services:
+  investimentos-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: investimentos-app
+    restart: unless-stopped
+    ports:
+      - "8084:8084"
+    environment:
+      - PORT=8084
+      - DB_PATH=/app/data/investimentos.db
+      - STATIC_DIR=/app/frontend/dist
+      - GIN_MODE=release
+      # Token opcional da Brapi (caso queira limite ampliado)
+      # - BRAPI_TOKEN=seu_token_aqui
+    volumes:
+      - investimentos_data:/app/data
+
+volumes:
+  investimentos_data:

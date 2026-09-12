@@ -1,0 +1,24 @@
+services:
+  manga-reader:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: manga-reader-app
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+      - DB_PATH=/app/data/manga.db
+      - STATIC_DIR=/app/frontend/dist
+    volumes:
+      - manga_data:/app/data
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 128M
+
+volumes:
+  manga_data:
+    name: manga_reader_data
