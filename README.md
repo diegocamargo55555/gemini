@@ -222,3 +222,4 @@ Este projeto foi desenhado com arquitetura de baixo overhead para que você poss
 
 ## 📄 Licença
 Distribuído sob a licença MIT. Sinta-se livre para usar e customizar como base para seu portfólio profissional!
+# gemini
